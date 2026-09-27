@@ -16,8 +16,9 @@ body {
 
   background: linear-gradient(
     135deg,
-    #4ef3b4,
-    #a3fa5c
+    #eef2ff,
+    #dbeafe,
+    #f0fdf4
   );
 }
 
@@ -119,14 +120,20 @@ input[type="password"]:focus {
   display: flex;
   align-items: center;
   gap: 6px;
-  color:#6258f3;
+  color: #6258f3;
 }
 
-.options a,
-.signup a {
+/* Forgot Password - normal text link */
+.forgot-link {
   color: #667eea;
-  text-decoration: none;
+  font-size: 12px;
   font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
 }
 
 button {
@@ -158,4 +165,23 @@ button:hover {
 
   color: #888;
   font-size: 12px;
+}
+
+.signup button {
+  width: auto;
+  padding: 0;
+  margin-left: 5px;
+
+  background: none;
+
+  color: #667eea;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.signup button:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
