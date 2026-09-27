@@ -72,7 +72,7 @@ function PageContent({
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/customers",
+          "https://cmr360.onrender.com/api/customers",
           {
             method: "GET",
             headers: {
@@ -144,7 +144,7 @@ function PageContent({
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/users",
+          "https://cmr360.onrender.com/api/users",
           {
             method: "GET",
             headers: {
@@ -195,7 +195,7 @@ useEffect(() => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/tasks",
+        "https://cmr360.onrender.com/api/tasks",
         {
           method: "GET",
           headers: {
@@ -243,7 +243,7 @@ useEffect(() => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/deals",
+        "https://cmr360.onrender.com/api/deals",
         {
           method: "GET",
           headers: {
@@ -291,7 +291,7 @@ useEffect(() => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/customers",
+        "https://cmr360.onrender.com/api/customers",
         {
           method: "GET",
           headers: {
@@ -337,7 +337,7 @@ useEffect(() => {
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/leads",
+          "https://cmr360.onrender.com/api/leads",
           {
             method: "GET",
             headers: {
@@ -450,7 +450,7 @@ const [deals, setDeals] = useState([]);
         const customerToUpdate = customers[customerEditIndex];
 
         const response = await fetch(
-          `http://localhost:5000/api/customers/${customerToUpdate._id}`,
+          `https://cmr360.onrender.com/api/customers/${customerToUpdate._id}`,
           {
             method: "PUT",
             headers: {
@@ -483,7 +483,7 @@ const [deals, setDeals] = useState([]);
         alert("Customer updated successfully!");
       } else {
         const response = await fetch(
-          "http://localhost:5000/api/customers",
+          "https://cmr360.onrender.com/api/customers",
           {
             method: "POST",
             headers: {
@@ -692,7 +692,7 @@ const [deals, setDeals] = useState([]);
         }
 
         const response = await fetch(
-          `http://localhost:5000/api/leads/${leadToUpdate._id}`,
+          `https://cmr360.onrender.com/api/leads/${leadToUpdate._id}`,
           {
             method: "PUT",
             headers: {
@@ -727,7 +727,7 @@ const [deals, setDeals] = useState([]);
       } else {
 
         const response = await fetch(
-          "http://localhost:5000/api/leads",
+          "https://cmr360.onrender.com/api/leads",
           {
             method: "POST",
             headers: {
@@ -831,7 +831,7 @@ const [deals, setDeals] = useState([]);
     }
 
     const response = await fetch(
-      `http://localhost:5000/api/leads/${leadToDelete._id}`,
+      `https://cmr360.onrender.com/api/leads/${leadToDelete._id}`,
       {
         method: "DELETE",
         headers: {
