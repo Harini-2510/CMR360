@@ -28,7 +28,7 @@ function DashboardHome({
 
       <div className="page-header">
         <div>
-          <h1>{t.dashboard}</h1>
+          <h1>{t?.dashboard || "Dashboard"}</h1>
         </div>
       </div>
 
@@ -48,7 +48,7 @@ function DashboardHome({
           <div className="content-card sales-overview-card">
 
             <div className="card-header">
-              <h2>{t.salesOverview}</h2>
+              <h2>{t?.salesOverview || "Sales Overview"}</h2>
             </div>
 
             <div className="sales-overview-grid">
