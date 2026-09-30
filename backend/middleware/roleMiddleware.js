@@ -1,4 +1,9 @@
 const roleMiddleware = (...allowedRoles) => {
+  // Normalize allowed roles once (case-insensitive comparison)
+  const allowed = allowedRoles.map((role) =>
+    String(role).trim().toLowerCase()
+  );
+
   return (req, res, next) => {
     try {
       if (!req.user) {
@@ -10,12 +15,13 @@ const roleMiddleware = (...allowedRoles) => {
 
       if (!req.user.role) {
         return res.status(403).json({
-          message:
-            "User role is not available.",
+          message: "User role is not available.",
         });
       }
 
-      if (!allowedRoles.includes(req.user.role)) {
+      const userRole = String(req.user.role).trim().toLowerCase();
+
+      if (!allowed.includes(userRole)) {
         return res.status(403).json({
           message:
             "You do not have permission to access this resource.",
@@ -23,16 +29,11 @@ const roleMiddleware = (...allowedRoles) => {
       }
 
       next();
-
     } catch (error) {
-      console.error(
-        "Role Authorization Error:",
-        error
-      );
+      console.error("Role Authorization Error:", error);
 
       return res.status(500).json({
-        message:
-          "Server error during role authorization.",
+        message: "Server error during role authorization.",
       });
     }
   };
